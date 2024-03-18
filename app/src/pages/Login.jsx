@@ -5,6 +5,12 @@ import { PrimaryButton, PrimaryLink } from '../components/button'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      console.log("Hello")
+    }
+
     return (
       <>
         <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" gap="1rem" marginBottom="2rem">
@@ -15,7 +21,7 @@ const Login = () => {
           <TextField variant="outlined" label="Password" type="password" />
   
           <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" gap="1rem">
-            <PrimaryButton component={Link} to="/login" variant="contained" size="large">Log in</PrimaryButton>
+            <PrimaryButton onClick={handleSubmit} variant="contained" size="large">Log in</PrimaryButton>
             <Typography marginTop="1.5rem">Not registered yet? <Link style={PrimaryLink} to="/register">Register here</Link></Typography>
           </Box>
         </Box>
