@@ -1,8 +1,11 @@
 import React from 'react'
 import Loading from '../components/loading';
 import Post from '../components/Post';
+import { usePostStore } from '../data/store';
 
 const Feed = () => {
+
+    const posts = usePostStore((state) => state.posts)
 
     const loading = false;
 
@@ -18,12 +21,13 @@ const Feed = () => {
     }
 
   return (
+    loading === true ? (<div style={loadingWrapper}><Loading/></div>) : (
     <div style={wrapper}>
-        { loading === true ? (<div style={loadingWrapper}><Loading/></div>) : (
-            <Post username="User230" date="18 march 2024" message="Can someone help me with this recipe???"/>
+        { posts.map((post) =>
+          <Post username={post.username} date={post.date} message={post.message}/>
         )}
     </div>
-  )
-}
+  ))}
+
 
 export default Feed
