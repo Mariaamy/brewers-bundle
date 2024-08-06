@@ -7,6 +7,8 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 // toggle navbar, show to user if loggedin
 const loggedin = true;
@@ -46,8 +48,9 @@ const Navbar = () => {
           }}
         >
           <BottomNavigationAction component={Link} to="/Feed" label="Recents" icon={<HomeIcon />} />
-          <BottomNavigationAction component={Link} to="/Login" label="Profile" icon={<PersonIcon />} />
-          <BottomNavigationAction component={Link} to="/Register" label="Favorites" icon={<FavoriteIcon />} />
+          <BottomNavigationAction component={Link} to="/profile" label="Profile" icon={<PersonIcon />} />
+          <BottomNavigationAction component={Link} to="/favorites" label="Favorites" icon={<FavoriteIcon />} />
+          <BottomNavigationAction component={Link} to="/" label="Logout" icon={<LogoutIcon />} />
         </BottomNavigation>
       </Box>
       <Box sx={wrapperLoggedOut}>
