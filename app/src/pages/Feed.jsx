@@ -1,5 +1,6 @@
 import React from 'react'
 import Loading from '../components/loading';
+import placeholder from '../assets/placeholder.jpeg';
 import Post from '../components/Post';
 import { usePostStore } from '../data/store';
 

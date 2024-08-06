@@ -11,7 +11,8 @@ import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import brewerLogo from '../assets/brewer-logo.svg'
+import brewerLogo from '../assets/brewer-logo.svg';
+import placeholder from '../assets/placeholder.jpeg';
 
 
 
@@ -34,7 +35,7 @@ const Post = (props) => {
     <CardMedia
       component="img"
       height="200"
-      image={brewerLogo}
+      image={placeholder}
       alt="Brewer logo"
     />
     <CardContent>
