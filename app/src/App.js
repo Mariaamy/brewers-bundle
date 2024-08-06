@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Feed from "./pages/Feed";
+import Profile from "./pages/Profile";
+import Favorites from "./pages/Favorites";
 import Nopagefound from "./pages/Nopagefound";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import VisualLib from "./components/VisualLib";
@@ -26,6 +28,12 @@ function App() {
         <Route
           path="/feed"
           element={<Feed/>}/>
+        <Route
+          path="/profile"
+          element={<Profile/>}/>
+        <Route
+          path="/favorites"
+          element={<Favorites/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

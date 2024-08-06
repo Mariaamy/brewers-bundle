@@ -12,7 +12,8 @@ const Feed = () => {
 
     const wrapper = {
         width: '100vw',
-        height: '72vh',
+        height: '100%',
+        marginBottom: '6rem'
     }
 
     const loadingWrapper = {
