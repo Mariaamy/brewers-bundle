@@ -8,8 +8,8 @@ import { PrimaryLink } from '../components/button'
 const Register = () => {
   return (
     <>
-    <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" gap="1rem" marginBottom="2rem">
-      <Loading></Loading>
+    <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" gap=".5rem" marginTop="2rem">
+      {/* <Loading></Loading> */}
       <h1 style={{margin: ".5rem"}}>Register</h1>
       <Typography textAlign="center" width="30ch" marginBottom="1rem">Log in or register to log and share your brewing creations.</Typography>
       <TextField variant="outlined" label="Username" />
