@@ -12,7 +12,6 @@ const Feed = () => {
     const posts = usePostStore((state) => state.posts)
 
     const [loading, setLoading] = React.useState(true);
-    const [open, setOpen] = React.useState(loading);
 
     useEffect(() => {
       if (loading) {
@@ -37,7 +36,7 @@ const Feed = () => {
     loading === true ? (
     <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
+        open={loading}
       >
         <div style={loadingWrapper}><Loading/></div>
       </Backdrop>

@@ -1,17 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react';
 import Loading from '../components/loading';
-import placeholder from '../assets/placeholder.jpeg';
-import Post from '../components/Post';
-import { usePostStore } from '../data/store';
 import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
 import { Box } from '@mui/material';
-import { positions } from 'react-alert';
 
 const Profile = () => {
   const [loading, setLoading] = React.useState(true);
-  const [open, setOpen] = React.useState(loading);
 
   useEffect(() => {
     if (loading) {
@@ -45,7 +39,7 @@ const Profile = () => {
     loading === true ? (
     <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
+        open={loading}
       >
         <div style={loadingWrapper}><Loading/></div>
       </Backdrop>
