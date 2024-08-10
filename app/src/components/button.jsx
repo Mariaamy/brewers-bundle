@@ -34,6 +34,16 @@ export const SecondaryButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+export const FollowButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(teal[500]),
+  width: "5rem",
+  height: "2rem",
+  backgroundColor: teal[400],
+  '&:hover': {
+    backgroundColor: teal[700],
+  },
+}));
+
 export const PrimaryLink = {
     color: teal[400],
     '&:hover': {
