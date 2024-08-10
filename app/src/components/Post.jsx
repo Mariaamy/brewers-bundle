@@ -11,7 +11,6 @@ import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import brewerLogo from '../assets/brewer-logo.svg';
 import placeholder from '../assets/placeholder.jpeg';
 
 
@@ -45,9 +44,11 @@ const Post = (props) => {
     </CardContent>
     <CardActions disableSpacing>
       <IconButton aria-label="add to favorites">
+        {/* TODO: Add like functionality */}
         <FavoriteIcon />
       </IconButton>
       <IconButton aria-label="share">
+        {/* TODO: Research and add share functionality */}
         <ShareIcon />
       </IconButton>
     </CardActions>

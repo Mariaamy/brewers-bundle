@@ -11,6 +11,11 @@ export const usePostStore = create((set) => ({
             date: '14 march 2024',
             username: 'User2201',
             message: 'Is my brew supposed to do this????'
+        },
+        {
+            date: '14 march 2024',
+            username: 'User2206',
+            message: 'This is my newest recipe. Enjoy!'
         }
     ]
 }))
