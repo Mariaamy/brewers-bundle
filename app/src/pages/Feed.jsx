@@ -1,11 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react';
 import Loading from '../components/loading';
-import placeholder from '../assets/placeholder.jpeg';
 import Post from '../components/Post';
 import { usePostStore } from '../data/store';
 import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
 
 const Feed = () => {
 
