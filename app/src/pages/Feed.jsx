@@ -41,7 +41,7 @@ const Feed = () => {
     ) : (
     <div style={wrapper}>
         { posts.map((post) =>
-          <Post username={post.username} date={post.date} message={post.message}/>
+          <Post username={post.username} date={post.date} message={post.message} image={post.image}/>
         )}
     </div>
   ))}

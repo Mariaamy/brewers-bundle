@@ -34,7 +34,7 @@ const Post = (props) => {
     <CardMedia
       component="img"
       height="200"
-      image={placeholder}
+      image={props.image}
       alt="Brewer logo"
     />
     <CardContent>
