@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Loading from '../components/loading';
 import Backdrop from '@mui/material/Backdrop';
 import { Box, Typography } from '@mui/material';
-import placeholder from '../assets/placeholder.jpeg';
 import { Link } from 'react-router-dom';
 import brewerIcon from '../assets/brewer-icon.svg';
 import leftArrowIcon from '../assets/leftarrow-icon.svg';

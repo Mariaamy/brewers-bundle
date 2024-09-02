@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Loading from '../components/loading';
 import Backdrop from '@mui/material/Backdrop';
 import { Box } from '@mui/material';
-import placeholder from '../assets/placeholder.jpeg';
 import { FollowButton } from '../components/button';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';

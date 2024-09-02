@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Loading from '../components/loading';
 import Backdrop from '@mui/material/Backdrop';
 import { Box, Typography } from '@mui/material';
-import placeholder from '../assets/placeholder.jpeg';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import bottledOne from '../assets/placeholders/bottled-one.jpg';
@@ -11,7 +10,6 @@ import bottledTwo from '../assets/placeholders/bottled-two.png';
 import bottledThree from '../assets/placeholders/bottled-three.jpg';
 import fermentingOne from '../assets/placeholders/fermenting-one.jpg';
 import fermentingTwo from '../assets/placeholders/fermenting-two.jpg';
-import fermentingThree from '../assets/placeholders/fermenting-three.jpg';
 
 const Favorites = () => {
   const [loading, setLoading] = React.useState(true);
@@ -79,11 +77,6 @@ const Favorites = () => {
     "&hover": {
       color: 'grey'
     }
-  }
-
-  const icon = {
-    marginLeft: '1rem',
-    marginBottom: '2rem'
   }
   
 
