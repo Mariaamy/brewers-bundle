@@ -31,12 +31,13 @@ const Post = (props) => {
       title={props.username}
       subheader={props.date}
     />
-    <CardMedia
+    {props.image === null ? '' : ( 
+      <CardMedia
       component="img"
       height="200"
       image={props.image}
       alt="Brewer logo"
-    />
+    />)}
     <CardContent>
       <Typography variant="body2" color="text.secondary">
        {props.message}

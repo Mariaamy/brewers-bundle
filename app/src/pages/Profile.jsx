@@ -11,18 +11,25 @@ import { Link } from 'react-router-dom';
 import brewerIcon from '../assets/brewer-icon.svg';
 import bottledIcon from '../assets/bottled-icon.svg';
 import arrowIcon from '../assets/arrow-icon.svg';
+import profileImage from '../assets/placeholders/profile.png';
+import bottledOne from '../assets/placeholders/bottled-one.jpg';
+import bottledTwo from '../assets/placeholders/bottled-two.png';
+import bottledThree from '../assets/placeholders/bottled-three.jpg';
+import fermentingOne from '../assets/placeholders/fermenting-one.jpg';
+import fermentingTwo from '../assets/placeholders/fermenting-two.jpg';
+import fermentingThree from '../assets/placeholders/fermenting-three.jpg';
 
 
 const Profile = () => {
   const [loading, setLoading] = React.useState(true);
 
   const fermentingItems = [
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
+    { text: 'Honey Haven Nectar', imageSrc: bottledOne, bottled: true, id: 'bottled' },
+    { text: 'Elderberry Eclipse', imageSrc: bottledTwo, bottled: true, id: 'bottled' },
+    { text: 'Mystic Melange', imageSrc: fermentingOne, bottled: false, id: 'unottled' },
+    { text: 'Spiced Amber Elixir', imageSrc: fermentingTwo, bottled: false, id: 'unbottled' },
+    { text: 'Moonlit Mead', imageSrc: fermentingThree, bottled: false, id: 'unbottled' },
+    { text: 'Golden Grove Nectar', imageSrc: bottledThree, bottled: true, id: 'bottled' },
   ];
 
   const unbottledItems = fermentingItems.filter(item => !item.bottled);
@@ -58,23 +65,24 @@ const Profile = () => {
   }
 
   const imageProfile = {
-    width: '60%',
+    width: '100%',
     height: '8rem',
     borderRadius: '50%',
     border: 'white 2px solid',
     position: 'relative',
-    left: '2rem',
+    left: '-1rem',
     bottom: '2rem',
-    objectFit: 'cover'
+    objectFit: 'cover',
   }
 
   const containerIntroduction = {
     display: 'flex',
+    justifyContent: 'center'
   }
 
   const introduction = {
     paddingTop: '1.5rem',
-    marginLeft: '-1.5rem'
+    marginLeft: '0rem'
   }
 
   const introductionFollow = {
@@ -105,10 +113,11 @@ const Profile = () => {
   }
 
   const fermentingList = {
-    width: '100%',
+    width: '70%',
+    marginLeft: '1rem',
     overflowX: 'auto',
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
  
   }
 
@@ -163,11 +172,11 @@ const Profile = () => {
        <Box style={container}>
           <Box style={containerIntroduction}>
             <Box>
-              <img src={placeholder} style={imageProfile} alt='Placeholder'/>
+              <img src={profileImage} style={imageProfile} alt='Placeholder'/>
             </Box>
             <Box style={introduction}>
               <Box>
-              Name Nameson
+              Kayla Jimenez
               </Box>
               <Box style={introductionFollow}>
                 <Box style={introductionFollowers}>

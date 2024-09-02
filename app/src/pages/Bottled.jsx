@@ -12,18 +12,23 @@ import brewerIcon from '../assets/brewer-icon.svg';
 import bottledIcon from '../assets/bottled-icon.svg';
 import leftArrowIcon from '../assets/leftarrow-icon.svg';
 import Icon from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import bottledOne from '../assets/placeholders/bottled-one.jpg';
+import bottledTwo from '../assets/placeholders/bottled-two.png';
+import bottledThree from '../assets/placeholders/bottled-three.jpg';
+import fermentingOne from '../assets/placeholders/fermenting-one.jpg';
+import fermentingTwo from '../assets/placeholders/fermenting-two.jpg';
+import fermentingThree from '../assets/placeholders/fermenting-three.jpg';
 
 const Bottled = () => {
   const [loading, setLoading] = React.useState(true);
 
   const fermentingItems = [
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
-    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
+    { text: 'Honey Haven Nectar', imageSrc: bottledOne, bottled: true, id: 'bottled' },
+    { text: 'Elderberry Eclipse', imageSrc: bottledTwo, bottled: true, id: 'bottled' },
+    { text: 'Mystic Melange', imageSrc: fermentingOne, bottled: false, id: 'unottled' },
+    { text: 'Spiced Amber Elixir', imageSrc: fermentingTwo, bottled: false, id: 'unbottled' },
+    { text: 'Moonlit Mead', imageSrc: fermentingThree, bottled: false, id: 'unbottled' },
+    { text: 'Golden Grove Nectar', imageSrc: bottledThree, bottled: true, id: 'bottled' },
   ];
 
   const bottledItems = fermentingItems.filter(item => item.bottled);
@@ -57,7 +62,7 @@ const Bottled = () => {
   }
 
   const fermentingList = {
-    marginTop: '2rem',
+    marginTop: '1rem',
     width: '100%',
     display: 'flex',
     flexWrap: 'wrap',

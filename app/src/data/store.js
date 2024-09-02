@@ -1,4 +1,6 @@
 import { create } from 'zustand'
+import postOne from '../assets/placeholders/post-one.jpg'
+import postTwo from '../assets/placeholders/post-two.png'
 
 
 // Manually conversed image to base64. This is how images should be stored and retrieved to and from the database.
@@ -7,23 +9,23 @@ const placeholderImage = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/2wB
 export const usePostStore = create((set) => ({
     posts: [
         {
-            date: '18 march 2024',
-            username: 'User2203',
+            date: '08 August 2024',
+            username: 'Colette Ellis',
             message: 'Hello! I need help please',
             // for manual image conversion: https://www.base64-image.de/
-            image: placeholderImage,
+            image: postOne,
         },
         {
-            date: '14 march 2024',
-            username: 'User2201',
+            date: '02 August 2024',
+            username: 'Jason Hays',
             message: 'Is my brew supposed to do this????',
-            image: placeholderImage,
+            image: postTwo,
         },
         {
-            date: '14 march 2024',
-            username: 'User2206',
-            message: 'This is my newest recipe. Enjoy!',
-            image: placeholderImage,
+            date: '14 July 2024',
+            username: 'Felicia Hudson',
+            message: 'My most recent recipe is now available in my profiles Bottled collection. Enjoy!',
+            image: null,
         }
     ]
 }))
