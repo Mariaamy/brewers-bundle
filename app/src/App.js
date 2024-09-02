@@ -8,6 +8,8 @@ import Favorites from "./pages/Favorites";
 import Nopagefound from "./pages/Nopagefound";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import VisualLib from "./components/VisualLib";
+import Fermenting from "./pages/Fermenting";
+import Bottled from "./pages/Bottled";
 
 
 function App() {
@@ -31,6 +33,16 @@ function App() {
         <Route
           path="/profile"
           element={<Profile/>}/>
+        <Route 
+          path="/profile/fermenting"
+          element={<Fermenting/>}/>
+        {/* <Route 
+          path="/profile/fermenting/:id"/> */}
+        <Route 
+          path="/profile/bottled"
+          element={<Bottled/>}/>
+        {/* <Route 
+          path="/profile/bottled/:id"/> */}
         <Route
           path="/favorites"
           element={<Favorites/>}/>

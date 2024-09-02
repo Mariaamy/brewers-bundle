@@ -4,13 +4,20 @@ import Loading from '../components/loading';
 import Backdrop from '@mui/material/Backdrop';
 import { Box, Typography } from '@mui/material';
 import placeholder from '../assets/placeholder.jpeg';
+import { FollowButton } from '../components/button';
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 import { Link } from 'react-router-dom';
+import brewerIcon from '../assets/brewer-icon.svg';
+import bottledIcon from '../assets/bottled-icon.svg';
+import leftArrowIcon from '../assets/leftarrow-icon.svg';
+import Icon from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const Favorites = () => {
+const Bottled = () => {
   const [loading, setLoading] = React.useState(true);
 
-  const favoriteItems = [
+  const fermentingItems = [
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unottled' },
@@ -18,6 +25,8 @@ const Favorites = () => {
     { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
   ];
+
+  const bottledItems = fermentingItems.filter(item => item.bottled);
 
   useEffect(() => {
     if (loading) {
@@ -76,9 +85,16 @@ const Favorites = () => {
     }
   }
 
-  const icon = {
+  const iconCategory = {
+    width: '2rem',
+    height: '3rem',
+    position: 'relative',
+    bottom: '1.8rem'
+  }
+
+  const iconArrow = {
     marginLeft: '1rem',
-    marginBottom: '2rem'
+    marginBottom: '3rem'
   }
   
 
@@ -92,15 +108,18 @@ const Favorites = () => {
         </Backdrop>
       ) : (
     <Box style={mainFermenting}>
+      <Link to={"/profile"}>
+        <img src={leftArrowIcon} style={iconArrow} alt='back arrow' />
+      </Link>
       <Box style={fermentingHeading}>
       {/* TODO: find appropriate MUI heading and icons */}
-      <FavoriteIcon/>
-      <Typography>Favorites</Typography>
+      <img src={bottledIcon} style={iconCategory} alt='Bottle'/>
+      <Typography>Bottled</Typography>
 
       </Box>
       {/* TODO: map out from store} */}
       <Box style={fermentingList}>
-        {favoriteItems.map((item, index) => (
+        {bottledItems.map((item, index) => (
           <Link key={index} style={linkItem}>
             <Box style={fermentingListItem}>
               <img src={item.imageSrc} style={imageFermenting} alt={item.text} />
@@ -114,4 +133,4 @@ const Favorites = () => {
   )
 }
 
-export default Favorites
+export default Bottled

@@ -7,9 +7,26 @@ import placeholder from '../assets/placeholder.jpeg';
 import { FollowButton } from '../components/button';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
+import { Link } from 'react-router-dom';
+import brewerIcon from '../assets/brewer-icon.svg';
+import bottledIcon from '../assets/bottled-icon.svg';
+import arrowIcon from '../assets/arrow-icon.svg';
+
 
 const Profile = () => {
   const [loading, setLoading] = React.useState(true);
+
+  const fermentingItems = [
+    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
+    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
+    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unottled' },
+    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
+    { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
+    { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
+  ];
+
+  const unbottledItems = fermentingItems.filter(item => !item.bottled);
+  const bottledItems = fermentingItems.filter(item => item.bottled);
 
   useEffect(() => {
     if (loading) {
@@ -22,7 +39,7 @@ const Profile = () => {
   const wrapper = {
       width: '100vw',
       height: '100vh',
-      marginBottom: '7rem',
+      marginBottom: '2rem',
       backgroundColor: 'beige'
   }
 
@@ -40,18 +57,19 @@ const Profile = () => {
     borderRadius: '3rem 3rem 0 0',
   }
 
-  const media = {
+  const imageProfile = {
     width: '60%',
     height: '8rem',
     borderRadius: '50%',
     border: 'white 2px solid',
     position: 'relative',
     left: '2rem',
-    bottom: '2rem'
+    bottom: '2rem',
+    objectFit: 'cover'
   }
 
   const containerIntroduction = {
-    display: 'flex'
+    display: 'flex',
   }
 
   const introduction = {
@@ -71,6 +89,67 @@ const Profile = () => {
     marginTop: '-.5rem'
   }
 
+  const containerMain = {
+    height: '60%',
+  }
+
+  const mainFermenting = {
+    height: '50%',
+    marginBottom: '.5rem'
+  }
+
+
+  const fermentingHeading = {
+    display: 'flex',
+    marginLeft: '1rem'
+  }
+
+  const fermentingList = {
+    width: '100%',
+    overflowX: 'auto',
+    display: 'flex',
+    justifyContent: 'space-around'
+ 
+  }
+
+  const fermentingListItem = {
+    maxWidth: '10ch',
+    textAlign: 'center'
+  }
+
+  const imageFermenting = {
+    width: '4rem',
+    height: '4rem',
+    borderRadius: '50%',
+    objectFit: 'cover'
+  }  
+  
+  const mainBottled = {
+    height: '50%',
+  }
+
+  const linkItem = {
+    textDecoration: 'none',
+    color: 'black',
+    "&hover": {
+      color: 'grey'
+    }
+  }
+
+  const iconCategory = {
+    width: '3rem',
+    height: '3rem',
+    position: 'relative',
+    bottom: '.9rem'
+  }
+
+  const iconArrow = {
+    width: '1rem',
+    height: '3.4rem',
+    position: 'absolute',
+    left: '20rem'
+  }
+
   return (
     loading === true ? (
     <Backdrop
@@ -84,7 +163,7 @@ const Profile = () => {
        <Box style={container}>
           <Box style={containerIntroduction}>
             <Box>
-              <img src={placeholder} style={media} alt='Placeholder'/>
+              <img src={placeholder} style={imageProfile} alt='Placeholder'/>
             </Box>
             <Box style={introduction}>
               <Box>
@@ -103,6 +182,51 @@ const Profile = () => {
                 </Box>
                 <FollowButton>Follow</FollowButton>
               </Box>
+            </Box>
+          </Box>
+          <Box style={containerMain}>
+            <Box style={mainFermenting}>
+              <Box style={fermentingHeading}>
+              {/* TODO: find appropriate MUI heading and icons */}
+              <img src={brewerIcon} style={iconCategory} alt='fermenting'/>
+              <p>Fermenting</p>
+              <Link to={"/profile/fermenting"}>
+              <img src={arrowIcon} style={iconArrow} alt='arrow'/>
+              </Link>
+              </Box>
+              {/* TODO: map out from store} */}
+              <Box style={fermentingList}>
+                {unbottledItems.map((item, index) => (
+                  <Link key={index} style={linkItem}>
+                    <Box style={fermentingListItem}>
+                      <img src={item.imageSrc} style={imageFermenting} alt={item.text} />
+                      <p>{item.text}</p>
+                    </Box>
+                  </Link>
+                ))}
+              </Box>
+            </Box>
+            <Box style={mainBottled}>
+              <Box style={fermentingHeading}>
+                {/* TODO: find appropriate MUI heading and icons */}
+                <img src={bottledIcon} style={iconCategory} alt='Bottle'/>
+                <p>Bottled</p>
+                <Link to={"/profile/bottled"}>
+                <img src={arrowIcon} style={iconArrow} alt='arrow'/>
+                </Link>
+              </Box>
+              {/* TODO: map out from store} */}
+              {/* TODO: Refactor CSS */}
+              <Box style={fermentingList}>
+                    {bottledItems.map((item, index) => (
+                      <Link key={index} style={linkItem}>
+                        <Box style={fermentingListItem}>
+                          <img src={item.imageSrc} style={imageFermenting} alt={item.text} />
+                          <p>{item.text}</p>
+                        </Box>
+                      </Link>
+                    ))}
+                  </Box>
             </Box>
           </Box>
        </Box>

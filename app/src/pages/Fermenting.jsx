@@ -5,12 +5,14 @@ import Backdrop from '@mui/material/Backdrop';
 import { Box, Typography } from '@mui/material';
 import placeholder from '../assets/placeholder.jpeg';
 import { Link } from 'react-router-dom';
+import brewerIcon from '../assets/brewer-icon.svg';
+import leftArrowIcon from '../assets/leftarrow-icon.svg';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const Favorites = () => {
+const Fermenting = () => {
   const [loading, setLoading] = React.useState(true);
 
-  const favoriteItems = [
+  const fermentingItems = [
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unottled' },
@@ -18,6 +20,8 @@ const Favorites = () => {
     { text: 'Example ferment', imageSrc: placeholder, bottled: false, id: 'unbottled' },
     { text: 'Example ferment', imageSrc: placeholder, bottled: true, id: 'bottled' },
   ];
+
+  const unbottledItems = fermentingItems.filter(item => !item.bottled);
 
   useEffect(() => {
     if (loading) {
@@ -42,7 +46,7 @@ const Favorites = () => {
 
   const fermentingHeading = {
     display: 'flex',
-    width: '30%',
+    width: '40%',
     marginLeft: '1rem',
     justifyContent: 'space-between'
   }
@@ -76,9 +80,16 @@ const Favorites = () => {
     }
   }
 
-  const icon = {
+  const iconCategory = {
+    width: '2.5rem',
+    height: '3rem',
+    position: 'relative',
+    bottom: '1.8rem'
+  }
+
+  const iconArrow = {
     marginLeft: '1rem',
-    marginBottom: '2rem'
+    marginBottom: '3rem'
   }
   
 
@@ -92,15 +103,18 @@ const Favorites = () => {
         </Backdrop>
       ) : (
     <Box style={mainFermenting}>
+      <Link to={"/profile"}>
+        <img src={leftArrowIcon} style={iconArrow} alt='back arrow' />
+      </Link>
       <Box style={fermentingHeading}>
       {/* TODO: find appropriate MUI heading and icons */}
-      <FavoriteIcon/>
-      <Typography>Favorites</Typography>
+      <img src={brewerIcon} style={iconCategory} alt='fermenting'/>
+      <Typography>Fermenting</Typography>
 
       </Box>
       {/* TODO: map out from store} */}
       <Box style={fermentingList}>
-        {favoriteItems.map((item, index) => (
+        {unbottledItems.map((item, index) => (
           <Link key={index} style={linkItem}>
             <Box style={fermentingListItem}>
               <img src={item.imageSrc} style={imageFermenting} alt={item.text} />
@@ -114,4 +128,4 @@ const Favorites = () => {
   )
 }
 
-export default Favorites
+export default Fermenting
